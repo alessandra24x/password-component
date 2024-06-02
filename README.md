@@ -1,30 +1,60 @@
-# React + TypeScript + Vite
+# Password Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A customizable password component that allows you to pass a list of requirements, making it easy to enforce various password policies in your application.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Password Component](#password-component)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Running the Project](#running-the-project)
+  - [Running Tests](#running-the-tests)
+  - [Storybook Tests](#storybook-tests)
+  - [Project Structure](#project-structure)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+git clone
+cd password-component
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Running the project
+
+We use storybook for component development for its ability to develop UI components in isolation, providing real-time feedback, documentation, and robust testing.
+
+```
+npm run dev
+```
+
+## Running the tests
+
+The `validatePassword` function has tests to ensure its correct operation.
+
+```
+npm run test
+```
+
+## Storybook tests
+
+The component can be tested on Storybook under the interactions tab (see image as reference)
+
+![storybook tests](./docs/storybook-tests.png)
+
+## Project structure
+
+```
+password-component/
+├── .storybook/ # Storybook configuration
+├── src/ # Source files
+│ ├── Password/ # Password component files
+│ │ ├── index.tsx
+│ │ ├── Password.stories.tsx
+│ │ ├── utils/ # Utility functions for Password component
+│ ├── App.tsx # Main app component
+│ ├── Check.tsx # Check component
+│ ├── Error.tsx # Error component
+│ ├── index.css # Global CSS
+│ ├── main.tsx # Entry point
+```
